@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.github": true,
+    "**/.vscode": true,
+    "**/dist": true,
+    "**/.husky": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": true,
+  "editor.tabSize": 4, // The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is true
+  "editor.insertSpaces": true, // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is true
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "rest-client.environmentVariables": {
+    "sandbox": {
+      "host": "localhost",
+      "port": "3000",
+      "token": ""
+    }
+  }
+}
