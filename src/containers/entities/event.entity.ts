@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Column, Entity, ManyToOne } from 'typeorm'
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm'
 import { BaseEntity } from '../../common/base-entity'
 import { Container } from './container.entity'
 import { Sensor } from './sensor.entity'
@@ -14,8 +14,10 @@ export class Event extends BaseEntity {
   customerId: string
 
   @ManyToOne(() => Container, container => container.events)
+  @JoinColumn({ name: 'container_id' })
   container: Container
 
   @ManyToOne(() => Sensor, sensor => sensor.events)
+  @JoinColumn({ name: 'sensor_id' })
   sensor: Sensor
 }
