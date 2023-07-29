@@ -16,10 +16,10 @@ import { TypeOrmModule } from '@nestjs/typeorm'
         password: configService.get('MYSQL_DB_PASSWORD'),
         database: configService.get('MYSQL_DB_NAME'),
         poolSize: 22,
-        synchronize: /true/.test(process.env.NODE_ENV),
+        synchronize: /development/.test(process.env.NODE_ENV),
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        autoLoadEntities: true
-        // logging: 'all'
+        autoLoadEntities: /development/.test(process.env.NODE_ENV),
+        logging: /development/.test(process.env.NODE_ENV) ? 'all' : false
       })
     })
   ]
